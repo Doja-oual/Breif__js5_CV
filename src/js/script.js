@@ -160,6 +160,38 @@ function validation() {
 
     return isValide;
 }
+//
+function downloadPDF(){
+    const {jsPDF}= window.jsPDF;
+    const doc = new jsPDF();
+    const 
+
+    const input1 = document.getElementById('input1').value; 
+    const input2 = document.getElementById('input2').value;
+    const input3= document.getElementById('input3').value;
+    const input4 = document.getElementById('input4').value;
+
+doc .setFont('arial');
+doc.setFontSize(18);
+doc.settextColor(200,50,80);
+doc.settext('gggggggggggg')
+
+
+
+doc.text(`input:${input1}`,80,60);
+
+
+
+
+doc.save('Test Forma');
+
+
+
+
+}
+///IMAGE666666666666666
+
+
 
 
 
