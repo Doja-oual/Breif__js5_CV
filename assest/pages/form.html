@@ -23,46 +23,47 @@
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
       </a>
      
-      <div class=" items-center justify-between hidden w-full md:flex md:w-auto md:order-1" class="Progress">
-        <ul class="  flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" class="progress-steps">
-          <li class="step active ">
+      <div  class="  items-center justify-between hidden w-full md:flex md:w-auto md:order-1" >
+        <ul class="stepper  flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" >
+          <li class="step  ">
             <span class="bg-blue-500 p-1 rounded-lg ">
               <i class="fa-solid fa-check text-blue-100  "></i>
                         </span>
-            <span class="steps__label">Donne personnelle</span>
+            <span >Donne personnelle</span>
           </li>
           <li class="step">
             <span class=" ">
               <i class="fa-solid fa-check"></i>
              </span>
-            <span class="steps__label">Donne personnelle</span>
+            <span>Donne personnelle</span>
           </li>
-          <li class="">
+          <li class="step">
             <span class=" ">
               <i class="fa-solid fa-check"></i>
                         </span>
-                        <span class="steps__label">ÉTUDES</span>
+                        <span >ÉTUDES</span>
           </li>
-          <li class="">
+          <li class="step">
             <span class=" ">
               <i class="fa-solid fa-check"></i>
-            </span><span class="steps__label">COMPÉTENCES
             </span>
+            <span >COMPÉTENCES </span>
           </li>
-          <li class="">
+          <li class="step">
             <span class="">
               <i class="fa-solid fa-check"></i>
-            </span><span class="steps__label">LANGAGES </span>
+            </span>
+            <span >LANGAGES </span>
           </li>
         </ul>
       </div>
       </div>
     </nav>
     <!--fin header-->
-    <div class="w-10/12 mx-auto p-6  m-8	">
+    <div class=" form-steps w-10/12 mx-auto p-6  m-8 	">
     <form action="#" id="form" onsubmit="return validation()">
         
-      <div class="w-10/12 mx-auto p-6 bg-white rounded-lg shadow-md m-8">
+      <div class=" form-step w-10/12 mx-auto p-6 bg-white rounded-lg shadow-md m-8 form-1   ">
         <h2 class="text-xl font-semibold mb-6">Information personnelle</h2>
         
         <div class="grid grid-cols-2 gap-8 mb-4">
@@ -102,7 +103,7 @@
           />
         </div>
       
-        <div class="grid grid-cols-2 gap-8 mb-4">
+        <div class="grid grid-cols-2 gap-8 mb-4 ">
           <div class="flex flex-col">
             <label for="Ville" class="mb-1 font-medium">Ville</label>
             <input
@@ -167,18 +168,17 @@
             required
           />
         </div>
-        <div class="flex gap-9">
-          <button type="submit" class="bg-green-500 text-white py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-start">retourne</button>
-          <button type="submit" class="bg-green-500 text-white py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-end">retourne</button>
+        <div class="flex gap-9 m-8 rounded-md ">
+          <button type="submit" class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start" disabled>retourne </button>
+          <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end">retourne</button>
 
         </div>
         
       
       </div>
       
-      <!--88888888888888888888888888888-->
         <!--Form des experience-->
-       <div class=" m-8 w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md">
+       <div class="form-step m-8 w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md hidden ">
   <h2 class="text-xl font-semibold mb-6">EXPÉRIENCE</h2>
   <p class="text-gray-600 mb-4">
     Indiquez votre expérience professionnelle, de la plus récente à la plus ancienne. N'hésitez pas à utiliser nos exemples prérédigés.
@@ -315,9 +315,9 @@
       </select>
     </div>
   </div>
-  <div class="flex gap-9">
-    <button type="submit" class="bg-green-500 text-white py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-start">retourne</button>
-    <button type="submit" class="bg-green-500 text-white py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-end">retourne</button>
+  <div class="flex gap-9 m-8 rounded-md ">
+    <button type="submit" class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start" >retourne </button>
+    <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end">retourne</button>
 
   </div>
 
@@ -325,7 +325,7 @@
 </div>
 
         <!--Form d'etudes-->
-        <div class="  w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md m-8">
+        <div class=" form-step w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md m-8 hidden ">
           <h2 class="text-2xl font-semibold mb-4">ÉTUDES</h2>
           <h3 class="text-lg mb-6">Ajoutez des informations sur votre parcours de formation.</h3>
         
@@ -413,14 +413,14 @@
             </div>
           
           </div>
-          <div class="flex gap-9">
-            <button type="submit" class="bg-green-500 text-white py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-start">retourne</button>
-            <button type="submit" class="bg-green-500 text-white py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-end">retourne</button>
-
+          <div class="flex gap-9 m-8 rounded-md ">
+            <button type="submit" class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start" >retourne </button>
+            <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end">retourne</button>
+  
           </div>
           </div>
           <!--FIN ETUDE ------------------------------------------->
-          <div class="  w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md m-8">
+          <div class="form-step  w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md m-8 hidden ">
           <h2 class="text-2xl font-semibold mb-4">COMPÉTENCES</h2>
           <h3 class="text-lg mb-6">Faites ressortir vos 6 à 8 compétences principales.</h3>
           <div class="grid grid-cols-2 gap-8 mb-4">
@@ -445,14 +445,14 @@
 
             </div>
           </div>
-          <div class="flex gap-9">
-            <button type="submit" class="bg-green-500 text-white py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-start">retourne</button>
-            <button type="submit" class="bg-green-500 text-white py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-end">retourne</button>
-
+          <div class="flex gap-9 m-8 rounded-md ">
+            <button type="submit" class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start" >retourne </button>
+            <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end">retourne</button>
+  
           </div>
 
           </div>
-          <div class="  w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md m-8">
+          <div class="form-step  w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md m-8 hidden ">
 
           <h2 class="text-2xl font-semibold mb-4">LANGAGES</h2>
           <div class="grid grid-cols-1 gap-4 mb-6">
@@ -478,12 +478,12 @@
               </select>
             </div>
           </div>
-        
-          <div class="flex gap-9">
-            <button type="submit" class="bg-green-500 text-white py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-start">retourne</button>
-            <button type="submit" class="bg-green-500 text-white py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-end">retourne</button>
-
-          </div>        </div>
+          <div class="flex gap-9 m-8 rounded-md ">
+            <button type="submit" class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start" >retourne </button>
+            <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end" disabled>retourne</button>
+  
+          </div>  
+            </div>
         
     </form>
     <button type="submit" class="bg-green-500 text-white float-end py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-end">Telechargé</button>

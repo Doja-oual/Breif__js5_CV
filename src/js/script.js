@@ -161,35 +161,113 @@ function validation() {
     return isValide;
 }
 //
-function downloadPDF(){
-    const {jsPDF}= window.jsPDF;
-    const doc = new jsPDF();
-    const 
+// function downloadPDF(){
+//     const {jsPDF}= window.jsPDF;
+//     const doc = new jsPDF();
+//     const 
 
-    const input1 = document.getElementById('input1').value; 
-    const input2 = document.getElementById('input2').value;
-    const input3= document.getElementById('input3').value;
-    const input4 = document.getElementById('input4').value;
+//     const input1 = document.getElementById('input1').value; 
+//     const input2 = document.getElementById('input2').value;
+//     const input3= document.getElementById('input3').value;
+//     const input4 = document.getElementById('input4').value;
 
-doc .setFont('arial');
-doc.setFontSize(18);
-doc.settextColor(200,50,80);
-doc.settext('gggggggggggg')
-
-
-
-doc.text(`input:${input1}`,80,60);
+// doc .setFont('arial');
+// doc.setFontSize(18);
+// doc.settextColor(200,50,80);
+// doc.settext('gggggggggggg')
 
 
 
-
-doc.save('Test Forma');
+// doc.text(`input:${input1}`,80,60);
 
 
 
 
-}
+// doc.save('Test Forma');
+
+
+
+
+// }
 ///IMAGE666666666666666
+// FUNCTION STEPEER--------------------------//
+
+
+
+ const steps =document.querySelectorAll('stepper .step');
+ const form_steps =document.querySelectorAll('.form-steps .form-step');
+
+ let active=1;
+
+function etapSuivant(){
+    
+    if(active<steps.length){
+        active++;
+        updateProgress();
+        }
+   
+ }
+
+ function etapPrecedente(){
+    if(active>1){
+        active--;
+
+        updateProgress();
+    }
+    
+
+ }
+
+ const updateProgress=()=>{
+    
+    steps.forEach((step,i)=>{
+      if(i==(active-1)){
+        step.classList.add('text-blue-500','font-bold');
+        step.classList.remove('text-gray-500')
+        form_steps[i].classList.remove('hidden');
+        form_steps[i].classList.add('block');
+
+     
+      }  else{
+        step.classList.remove('text-blue-500','font-bold');
+        step.classList.add('text-gray-500')
+        form_steps[i].classList.add('hidden');
+        form_steps[i].classList.remove('block');
+
+      }
+    });
+};
+form_steps.forEach((step,i) => {
+    const nextButton =step.querySelector('.btn-next');
+    const prevButton =step.querySelector('.btn-prev');
+
+    if (nextButton) {
+        nextButton.addEventListener('click', (e)=>{
+            e.preventDefault();
+            etapSuivant();
+        });
+       
+      }
+      if (prevButton) {
+        prevButton.addEventListener('click', (e)=>{
+            e.preventDefault();
+            etapPrecedente();
+        });
+      }
+});
+
+
+
+   
+
+
+
+   
+
+
+
+
+ 
 
 
 
