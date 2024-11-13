@@ -26,8 +26,8 @@
       <div  class="  items-center justify-between hidden w-full md:flex md:w-auto md:order-1" >
         <ul class="stepper  flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" >
           <li class="step  ">
-            <span class="bg-blue-500 p-1 rounded-lg ">
-              <i class="fa-solid fa-check text-blue-100  "></i>
+            <span class=" ">
+              <i class="fa-solid fa-check  "></i>
                         </span>
             <span >Donne personnelle</span>
           </li>
@@ -61,9 +61,9 @@
     </nav>
     <!--fin header-->
     <div class=" form-steps w-10/12 mx-auto p-6  m-8 	">
-    <form action="#" id="form" onsubmit="return validation()">
+    <form action="#" id="form" >
         
-      <div class=" form-step w-10/12 mx-auto p-6 bg-white rounded-lg shadow-md m-8 form-1   ">
+      <div id="personal" class=" form-step w-10/12 mx-auto p-6 bg-white rounded-lg shadow-md m-8 form-1   ">
         <h2 class="text-xl font-semibold mb-6">Information personnelle</h2>
         
         <div class="grid grid-cols-2 gap-8 mb-4">
@@ -169,8 +169,7 @@
           />
         </div>
         <div class="flex gap-9 m-8 rounded-md ">
-          <button type="submit" class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start" disabled>retourne </button>
-          <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end">retourne</button>
+          <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end" id="pass">Next</button>
 
         </div>
         
@@ -178,7 +177,7 @@
       </div>
       
         <!--Form des experience-->
-       <div class="form-step m-8 w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md hidden ">
+       <div id="experience" class="form-step m-8 w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md hidden ">
   <h2 class="text-xl font-semibold mb-6">EXPÉRIENCE</h2>
   <p class="text-gray-600 mb-4">
     Indiquez votre expérience professionnelle, de la plus récente à la plus ancienne. N'hésitez pas à utiliser nos exemples prérédigés.
@@ -316,8 +315,11 @@
     </div>
   </div>
   <div class="flex gap-9 m-8 rounded-md ">
-    <button type="submit" class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start" >retourne </button>
-    <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end">retourne</button>
+    <button type="submit" class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start" id="retourn">retourne </button>
+    <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end">Next</button>
+    <button type="submit" class="ajout-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end">Ajoute</button>
+
+
 
   </div>
 
@@ -415,7 +417,7 @@
           </div>
           <div class="flex gap-9 m-8 rounded-md ">
             <button type="submit" class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start" >retourne </button>
-            <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end">retourne</button>
+            <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end">Next</button>
   
           </div>
           </div>
@@ -447,7 +449,7 @@
           </div>
           <div class="flex gap-9 m-8 rounded-md ">
             <button type="submit" class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start" >retourne </button>
-            <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end">retourne</button>
+            <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end">Next</button>
   
           </div>
 
@@ -479,14 +481,13 @@
             </div>
           </div>
           <div class="flex gap-9 m-8 rounded-md ">
-            <button type="submit" class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start" >retourne </button>
-            <button type="submit" class="btn-next  bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end" disabled>retourne</button>
+            <button type="submit" class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start" >Next </button>
   
           </div>  
             </div>
         
     </form>
-    <button type="submit" class="bg-green-500 text-white float-end py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-end">Telechargé</button>
+    <button type="submit" class="bg-green-500 text-white py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-end">Telechargé</button>
 
     </div>
     
@@ -538,7 +539,9 @@
           </div>
       </div>
   </footer>
- <script src="../src/js/script.js"></script>
- <script src=" https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
-    </body>
+ <script src="../script.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>    </body>
     
