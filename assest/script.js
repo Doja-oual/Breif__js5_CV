@@ -247,17 +247,24 @@ function ajouteSection(type){
     else if(type==="etude"){
         parent=document.getElementById("etudes-parent");
         sections=document.getElementById("etude-section");
-    }
+        let newsections=sections.cloneNode(true);
+        newsections.removeAttribute("id");
+        sections.appendChild(newsections);
+        }
     else if(type==="competence"){
         parent=document.getElementById("competence-parent");
         sections=document.getElementById("competence-section");
+        let newsections=sections.cloneNode(true);
+        newsections.removeAttribute("id");
+        sections.appendChild(newsections);
+        }
     }
    
 
 
     
 
-}
+
 
 
 document.getElementById("add-competence").addEventListener('click', function(){
