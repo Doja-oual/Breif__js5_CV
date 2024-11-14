@@ -231,10 +231,45 @@ form_steps.forEach((step,i) => {
 });
 
 
-// // -----------------------------DYnamique form------------------------///
+// // ----------------------------- Function DYnamique form------------------------///
 
-//    const addbtn =document.querySelector(".ajout-next");
-//    addbtn.addEventListener("click")
+function ajouteSection(type){
+    let parent;
+    let sections;
+     
+    if(type==="experience"){
+        parent=document.getElementById("experience-parent");
+        sections=document.getElementById("experience-section");
+        let newsections=sections.cloneNode(true);
+    newsections.removeAttribute("id");
+    sections.appendChild(newsections);
+    }
+    else if(type==="etude"){
+        parent=document.getElementById("etudes-parent");
+        sections=document.getElementById("etude-section");
+    }
+    else if(type==="competence"){
+        parent=document.getElementById("competence-parent");
+        sections=document.getElementById("competence-section");
+    }
+   
+
+
+    
+
+}
+
+
+document.getElementById("add-competence").addEventListener('click', function(){
+    ajouteSection("competence");
+});
+document.getElementById("add-etude").addEventListener('click', function(){
+    ajouteSection("etude");
+});
+document.getElementById("add-experience").addEventListener('click', function(){
+    ajouteSection("experience");
+});
+
 
 
 
