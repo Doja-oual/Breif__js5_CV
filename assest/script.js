@@ -162,12 +162,25 @@
 // }
 //FUNCTION DE DOWNLOADPDF------------------------------------------------------------------------
 // function downloadPDF(){
-    function generatePDF() {
-        var pdf = new jsPDF('l', 'pt', 'a4');//sets the orientation and measurement and paper size 
-        pdf.addHTML($("#downloadCv"), -1, -1, function () {
-        pdf.save('cv.pdf');
-    });
+const btndwlond = document.querySelector("#download__pdf");
+const resume = document.querySelector("#preview-section");
+  btndwlond.addEventListener("click", async function () {
+
+    const filename = "my-cv.pdf";
+  
+    const options = {
+      margin: 0,
+      filename: filename,
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    };
+    try {
+      await html2pdf().set(options).from(resume).save();
+    } catch (error) {
+      console.error("false:", error.message);
     }
+  });
 // FUNCTION STEPEER--------------------------//
 
  const steps =document.querySelectorAll('.stepper .step');
@@ -279,11 +292,146 @@ document.getElementById("add-experience").addEventListener('click', function(){
 
 
 
+let resumeData = []
+//Recuperation de donne -----------------------------//
+function getFormValues() {
+  const infoPersonnel = {
+    prenom: document.getElementById("prenom").value,
+    nom: document.getElementById("nom").value,
+    adresse: document.getElementById("Adresse").value,
+    ville: document.getElementById("Ville").value,
+    pays: document.getElementById("heading-contry").value,
+    postalCode: document.getElementById("cd-postal").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("heading_phone").value,
+  };
+
+  const experiences = Array.from(document.querySelectorAll(".experience-groups")).map((exper) => ({
+    employer: exper.querySelector("#employeur").value,
+    intitPost: exper.querySelector("#intit-post").value,
+    ville: exper.querySelector("#Ville").value,
+    Etat: exper.querySelector("#Etat").value,
+    startDateMonth: exper.querySelector("#experience_end_month").value,
+    startDateYear: exper.querySelector("#experience_start_year").value,
+    endDateMonth: exper.querySelector("#experience_end_month").value,
+    endDateYear: exper.querySelector("#experience_end_year").value,
+  }));
+
+  const etudes = Array.from(document.querySelectorAll(".etude-groups")).map((etude) => ({
+    schoolName: etude.querySelector("#nom-ecole").value,
+    ville: etude.querySelector("#Ville").value,
+    Etat: etude.querySelector("#Etat").value,
+    degree: etude.querySelector("#edu-degreelist").value,
+    fieldOfStudy: etude.querySelector("#Domaine-etudey").value,
+    graduationDate: `${etude.querySelector("#experience_end_month").value} ${etude.querySelector("#experience_start_year").value}`,
+  }));
+
+  const competences = Array.from(document.querySelectorAll(".competence-groups")).map((comp) => ({
+    competenceName: comp.querySelector("#competence").value,
+    competenceLevel: comp.querySelector("#Niveau").value,
+  }));
+
+  const languages = {
+    french: document.getElementById("french").value,
+    english: document.getElementById("english").value,
+    spanish: document.getElementById("spanish").value,
+  };
+
+  resumeData.push(infoPersonnel, experiences, etudes, competences, languages)
+  
+}
+
+const form = document.querySelector("#form");
+
+form.addEventListener("submit", (e)=> {
+    e.preventDefault();
+    // document.querySelector(".toggle-section").classList.remove("hidden");
+     getFormValues()
+     
+     affichage()
+     console.log(resumeData)
+})
+
+
+ // CV---------------
+
+const affichage = () => {
+  const [infoPersonnel, experiences, etudes, competences, languages] = resumeData;
+
+  document.querySelector("#preview-section").innerHTML = `
+    <div class="max-w-4xl mx-auto my-8 bg-white shadow-md rounded-lg overflow-hidden">
+      <!-- Header -->
+      <div class="bg-[#820E65] text-white py-6 px-8">
+        <h1 class="text-3xl font-bold">${infoPersonnel.prenom} ${infoPersonnel.nom}</h1>
+        <p class="text-lg">${infoPersonnel.adresse}, ${infoPersonnel.ville}, ${infoPersonnel.pays}</p>
+        <p class="text-sm mt-2">${infoPersonnel.email} | ${infoPersonnel.phone}</p>
+      </div>
+
+      <!-- About Section -->
+      <div class="p-6">
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">À Propos</h2>
+        <p class="text-gray-600">Résumé ou description à ajouter ici.</p>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="p-6">
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Expérience Professionnelle</h2>
+        ${experiences.map(exp => `
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800">${exp.intitPost}</h3>
+            <p class="text-sm text-gray-500">${exp.employer}, ${exp.ville}, ${exp.Etat} | ${exp.startDateMonth}/${exp.startDateYear} - ${exp.endDateMonth}/${exp.endDateYear}</p>
+            <ul class="list-disc list-inside text-gray-600 mt-2">
+              <li>Tâche ou responsabilité 1</li>
+              <li>Tâche ou responsabilité 2</li>
+            </ul>
+          </div>
+        `).join('')}
+      </div>
+
+      <!-- Education Section -->
+      <div class="p-6">
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Éducation</h2>
+        ${etudes.map(edu => `
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800">${edu.degree} - ${edu.fieldOfStudy}</h3>
+            <p class="text-sm text-gray-500">${edu.schoolName}, ${edu.ville}, ${edu.Etat} | Diplômé en ${edu.graduationDate}</p>
+          </div>
+        `).join('')}
+      </div>
+
+      <!-- Skills Section -->
+      <div class="p-6">
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Compétences</h2>
+        <div class="flex flex-wrap gap-2">
+          ${competences.map(comp => `
+            <span class="bg-green-200 text-green-700 px-4 py-2 rounded-full text-sm">${comp.competenceName} (${comp.competenceLevel})</span>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- Languages Section -->
+      <div class="p-6">
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Langues</h2>
+        <ul class="text-gray-600">
+          <li>Français : ${languages.french}</li>
+          <li>Anglais : ${languages.english}</li>
+          <li>Espagnol : ${languages.spanish}</li>
+        </ul>
+      </div>
+    </div>
+  `;
+};
+
+
+ 
+
+
+
+  
 
 
 
 
-   
 
 
 

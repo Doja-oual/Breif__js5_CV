@@ -24,10 +24,10 @@
           href="../index.html"
           class="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img src="../src/images/logo.png" class="h-8" alt="Flowbite Logo" />
+          <img src="../../src/images/logo.png" class="h-8" alt="EmpowerCV Logo" />
           <span
             class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-            >Flowbite</span
+            >EmpowerCV</span
           >
         </a>
 
@@ -47,7 +47,7 @@
               <span class=" ">
                 <i class="fa-solid fa-check"></i>
               </span>
-              <span>Donne personnelle</span>
+              <span>Experience</span>
             </li>
             <li class="step">
               <span class=" ">
@@ -70,14 +70,28 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav>l
     <!--fin header-->
     <div class="form-steps w-10/12 mx-auto p-6 m-8">
       <form action="#" id="form">
         <div
-          id="personal-section" class="form-step w-10/12 mx-auto p-6 bg-white rounded-lg shadow-md m-8 form-1">
+          id="personal-section"
+          class="form-step w-10/12 mx-auto p-6 bg-white rounded-lg shadow-md m-8 form-1"
+        >
           <h2 class="text-xl font-semibold mb-6">Information personnelle</h2>
 
+          <!-- <div class="grid grid-cols-2 gap-8 mb-4">
+            <div class="flex flex-col">
+              <label for="" class="mb-1 font-medium">image</label>
+              <input
+                class="border border-green-600 p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-green-500"
+                type="file"
+                id="image"
+                name="image"
+                accept="image/*"
+                onchange="">
+                </div> -->
+                <div class="infopersonel" >
           <div class="grid grid-cols-2 gap-8 mb-4">
             <div class="flex flex-col">
               <label for="prenom" class="mb-1 font-medium">Prénom</label>
@@ -87,7 +101,7 @@
                 id="prenom"
                 name="prenom"
                 placeholder="p.ex., Khadija"
-                required
+              
               />
             </div>
             <div class="flex flex-col">
@@ -98,7 +112,7 @@
                 id="nom"
                 name="nom"
                 placeholder="p.ex., Oualla"
-                required
+                
               />
             </div>
           </div>
@@ -111,7 +125,7 @@
               id="Adresse"
               name="Adresse"
               placeholder="p.ex., 60 Collins"
-              required
+              
             />
           </div>
 
@@ -124,7 +138,7 @@
                 id="Ville"
                 name="Ville"
                 placeholder="p.ex., Azilal"
-                required
+                
               />
             </div>
             <div class="flex flex-col">
@@ -133,7 +147,7 @@
                 name="heading[contry]"
                 id="heading-contry"
                 class="border border-green-600 p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-green-500"
-                required
+                
               >
                 <option value="">Choisir</option>
                 <option value="1">Maroc</option>
@@ -153,7 +167,7 @@
                 type="text"
                 id="cd-postal"
                 name="code-postal"
-                required
+                
               />
             </div>
             <div class="flex flex-col">
@@ -164,7 +178,7 @@
                 id="email"
                 name="email"
                 placeholder="p.ex., doja@example.com"
-                required
+                
               />
             </div>
           </div>
@@ -181,12 +195,13 @@
               placeholder="p.ex., 202-555-0145"
               maxlength="15"
               autocomplete="off"
-              required
+              
             />
           </div>
+        </div>
           <div class="flex gap-9 m-8 rounded-md">
             <button
-              type="submit"
+              
               class="btn-next bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end"
               id="pass"
             >
@@ -205,8 +220,7 @@
               Indiquez votre expérience professionnelle, de la plus récente à la
               plus ancienne. N'hésitez pas à utiliser nos exemples prérédigés.
             </p>
-            <div id="experience-section">
-              
+            <div class="experience-groups" id="experience-section">
               <div class="grid grid-cols-2 gap-8 mb-4">
                 <div class="flex flex-col">
                   <label for="employeur" class="mb-1 font-medium"
@@ -349,20 +363,20 @@
             </div>
             <div class="flex gap-9 m-8 rounded-md">
               <button
-                type="submit"
+                
                 class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start"
                 id="retourn"
               >
                 retourne
               </button>
               <button
-                type="submit"
+                
                 class="btn-next bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end"
               >
                 Next
               </button>
               <button
-                type="submit"
+                
                 class="ajout-next bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end"
                 id="add-experience"
               >
@@ -374,258 +388,275 @@
 
         <!--Form d'etudes-->
         <div id="etudes-parent">
-          <div class="form-step w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md m-8 hidden">
+          <div
+            class="form-step w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md m-8 hidden"
+          >
             <h2 class="text-2xl font-semibold mb-4">ÉTUDES</h2>
             <h3 class="text-lg mb-6">
               Ajoutez des informations sur votre parcours de formation.
             </h3>
-                    <div id="etude-section">
-            <div class="grid grid-cols-2 gap-8 mb-4">
-              <div class="flex flex-col">
-                <label for="nom-ecole" class="mb-1 font-medium"
-                  >Nom de l'école</label
-                >
-                <input
-                  type="text"
-                  id="nom-ecole"
-                  name="nom-ecole"
-                  placeholder="p.ex. Université de Harvard"
-                  class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
-                  required
-                />
-              </div>
-              <div class="flex flex-col">
-                <label for="Ville" class="mb-1 font-medium">Ville</label>
-                <input
-                  type="text"
-                  id="Ville"
-                  name="Ville"
-                  placeholder="p.ex. Casablanca"
-                  class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-8 mb-4">
-              <div class="flex flex-col">
-                <label for="Etat" class="mb-1 font-medium">État</label>
-                <input
-                  type="text"
-                  id="Etat"
-                  name="Etat"
-                  placeholder="p.ex. California"
-                  class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
-                  required
-                />
-              </div>
-              <div class="flex flex-col">
-                <label for="edu-degreelist" class="mb-1 font-medium"
-                  >Sélectionnez un diplôme</label
-                >
-                <select
-                  id="edu-degreelist"
-                  class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
-                  required
-                >
-                  <option value="">Sélectionnez un diplôme</option>
-                  <option value="Diplôme études secondaires">
-                    Diplôme d’études secondaires
-                  </option>
-                  <option value="GED">GED</option>
-                  <option value="Bachelor en Arts">Bachelor en Arts</option>
-                  <option value="Bachelor en Science">
-                    Bachelor en Science
-                  </option>
-                  <option value="MBA">MBA</option>
-                  <option value="Ph.D.">Ph.D.</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-8 mb-4">
-              <div class="flex flex-col">
-                <label for="Domaine-etudey" class="mb-1 font-medium"
-                  >Domaine d'étude</label
-                >
-                <input
-                  type="text"
-                  id="Domaine-etudey"
-                  name="Domaine-etudey"
-                  placeholder="p.ex. ingénierie"
-                  class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
-                  required
-                />
-              </div>
-              <div class="flex flex-col">
-                <label class="mb-1 font-medium"
-                  >Date d'obtention du diplôme</label
-                >
-                <div class="grid grid-cols-2 gap-2">
-                  <select
-                    id="experience_end_month"
-                    class="border border-gray-300 p-2 rounded focus:ring-2 focus:ring-green-500"
+            <div class="etude-groups" id="etude-section">
+              <div class="grid grid-cols-2 gap-8 mb-4">
+                <div class="flex flex-col">
+                  <label for="nom-ecole" class="mb-1 font-medium"
+                    >Nom de l'école</label
                   >
-                    <option value="">Mois</option>
-                    <option value="1">Janvier</option>
-                    <option value="12">Décembre</option>
-                  </select>
-                  <select
-                    id="experience_start_year"
-                    class="border border-gray-300 p-2 rounded focus:ring-2 focus:ring-green-500"
+                  <input
+                    type="text"
+                    id="nom-ecole"
+                    name="nom-ecole"
+                    placeholder="p.ex. Université de Harvard"
+                    class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <label for="Ville" class="mb-1 font-medium">Ville</label>
+                  <input
+                    type="text"
+                    id="Ville"
+                    name="Ville"
+                    placeholder="p.ex. Casablanca"
+                    class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-8 mb-4">
+                <div class="flex flex-col">
+                  <label for="Etat" class="mb-1 font-medium">État</label>
+                  <input
+                    type="text"
+                    id="Etat"
+                    name="Etat"
+                    placeholder="p.ex. California"
+                    class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <label for="edu-degreelist" class="mb-1 font-medium"
+                    >Sélectionnez un diplôme</label
                   >
-                    <option value="">An</option>
-                    <option value="2024">2024</option>
-                    <option value="2010">2010</option>
+                  <select
+                    id="edu-degreelist"
+                    class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
+                    
+                  >
+                    <option value="">Sélectionnez un diplôme</option>
+                    <option value="Diplôme études secondaires">
+                      Diplôme d’études secondaires
+                    </option>
+                    <option value="GED">GED</option>
+                    <option value="Bachelor en Arts">Bachelor en Arts</option>
+                    <option value="Bachelor en Science">
+                      Bachelor en Science
+                    </option>
+                    <option value="MBA">MBA</option>
+                    <option value="Ph.D.">Ph.D.</option>
                   </select>
                 </div>
               </div>
+
+              <div class="grid grid-cols-2 gap-8 mb-4">
+                <div class="flex flex-col">
+                  <label for="Domaine-etudey" class="mb-1 font-medium"
+                    >Domaine d'étude</label
+                  >
+                  <input
+                    type="text"
+                    id="Domaine-etudey"
+                    name="Domaine-etudey"
+                    placeholder="p.ex. ingénierie"
+                    class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <label class="mb-1 font-medium"
+                    >Date d'obtention du diplôme</label
+                  >
+                  <div class="grid grid-cols-2 gap-2">
+                    <select
+                      id="experience_end_month"
+                      class="border border-gray-300 p-2 rounded focus:ring-2 focus:ring-green-500"
+                    >
+                      <option value="">Mois</option>
+                      <option value="1">Janvier</option>
+                      <option value="12">Décembre</option>
+                    </select>
+                    <select
+                      id="experience_start_year"
+                      class="border border-gray-300 p-2 rounded focus:ring-2 focus:ring-green-500"
+                    >
+                      <option value="">An</option>
+                      <option value="2024">2024</option>
+                      <option value="2010">2010</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
             <div class="flex gap-9 m-8 rounded-md">
               <button
-                type="submit"
+                
                 class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start"
               >
                 retourne
               </button>
               <button
-                type="submit"
+                
                 class="btn-next bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end"
               >
                 Next
               </button>
               <button
-                type="submit"
+                
                 class="ajout-next bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end"
                 id="add-etude"
               >
                 Ajoute
               </button>
-          
-          </div>
+            </div>
           </div>
         </div>
         <!--COMPETENTCE-->
         <div id="competence-parent">
-          <div class="form-step w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md m-8 hidden"
+          <div
+            class="form-step w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md m-8 hidden"
           >
             <h2 class="text-2xl font-semibold mb-4">COMPÉTENCES</h2>
             <h3 class="text-lg mb-6">
               Faites ressortir vos 6 à 8 compétences principales.
             </h3>
-            <div id="competence-section">
-            <div class="grid grid-cols-2 gap-8 mb-4">
-              <div class="flex flex-col">
-                <label for="competence" class="mb-1 font-medium"
-                  >Compétence</label
-                >
-                <input
-                  type="text"
-                  id="competence"
-                  name="competence"
-                  placeholder="p.ex. gestion de projet"
-                  class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
-                  required
-                />
-              </div>
-              <div class="flex flex-col">
-                <label for="Niveau" class="mb-1 font-medium">Niveau</label>
-                <select
-                  id="Niveau"
-                  class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
-                >
-                  <option value="">
-                    Sélectionnez votre niveau de compétence
-                  </option>
-                  <option value="1">Novice</option>
-                  <option value="5">Expert</option>
-                </select>
+            <div class="competence-groups" id="competence-section">
+              <div class="grid grid-cols-2 gap-8 mb-4">
+                <div class="flex flex-col">
+                  <label for="competence" class="mb-1 font-medium"
+                    >Compétence</label
+                  >
+                  <input
+                    type="text"
+                    id="competence"
+                    name="competence"
+                    placeholder="p.ex. gestion de projet"
+                    class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <label for="Niveau" class="mb-1 font-medium">Niveau</label>
+                  <select
+                    id="Niveau"
+                    class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
+                  >
+                    <option value="">
+                      Sélectionnez votre niveau de compétence
+                    </option>
+                    <option value="1">Novice</option>
+                    <option value="5">Expert</option>
+                  </select>
+                </div>
               </div>
             </div>
-          </div>
             <div class="flex gap-9 m-8 rounded-md">
               <button
-                type="submit"
+                
                 class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start"
               >
                 retourne
               </button>
               <button
-                type="submit"
+                
                 class="btn-next bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end"
               >
                 Next
               </button>
               <button
-                type="submit"
+                
                 class="ajout-next bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-end"
                 id="add-competence"
               >
                 Ajoute
               </button>
             </div>
-          
-        </div>
+          </div>
         </div>
         <!--LANGE-->
-        
-          <div class="form-step w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md m-8 hidden"
-          >
-            <h2 class="text-2xl font-semibold mb-4">LANGAGES</h2>
-            <div class="grid grid-cols-1 gap-4 mb-6">
-              <div>
-                <label for="french" class="mb-1 font-medium">Français :</label>
-                <select
-                  id="french"
-                  name="french_level"
-                  class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
-                >
-                  <option value="debutant">Débutant</option>
-                  <option value="maitrise">Maîtrise</option>
-                </select>
-              </div>
-              <div>
-                <label for="english" class="mb-1 font-medium">Anglais :</label>
-                <select
-                  id="english"
-                  name="english_level"
-                  class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
-                >
-                  <option value="debutant">Débutant</option>
-                  <option value="maitrise">Maîtrise</option>
-                </select>
-              </div>
-              <div>
-                <label for="spanish" class="mb-1 font-medium">Espagnol :</label>
-                <select
-                  id="spanish"
-                  name="spanish_level"
-                  class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
-                >
-                  <option value="debutant">Débutant</option>
-                  <option value="maitrise">Maîtrise</option>
-                </select>
-              </div>
-            </div>
-            <div class="flex gap-9 m-8 rounded-md">
-              <button
-                type="submit"
-                class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start"
+
+        <div
+          class="form-step w-10/12 mx-auto p-2 bg-white rounded-lg shadow-md m-8 hidden"
+        >
+          <h2 class="text-2xl font-semibold mb-4">LANGAGES</h2>
+          <div class="grid grid-cols-1 gap-4 mb-6">
+            <div>
+              <label for="french" class="mb-1 font-medium">Français :</label>
+              <select
+                id="french"
+                name="french_level"
+                class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
               >
-                Next
-              </button>
-             
+                <option value="debutant">Débutant</option>
+                <option value="maitrise">Maîtrise</option>
+              </select>
+            </div>
+            <div>
+              <label for="english" class="mb-1 font-medium">Anglais :</label>
+              <select
+                id="english"
+                name="english_level"
+                class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
+              >
+                <option value="debutant">Débutant</option>
+                <option value="maitrise">Maîtrise</option>
+              </select>
+            </div>
+            <div>
+              <label for="spanish" class="mb-1 font-medium">Espagnol :</label>
+              <select
+                id="spanish"
+                name="spanish_level"
+                class="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-green-500"
+              >
+                <option value="debutant">Débutant</option>
+                <option value="maitrise">Maîtrise</option>
+              </select>
             </div>
           </div>
-        
+          <div class="flex gap-9 m-8 rounded-md">
+
+            <button 
+              
+              class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start"
+            >
+              retourne
+            </button>
+            <button 
+            id="submit-button"
+              type="submit"
+              class="btn-prev bg-[#820E65] text-white py-1 px-4 rounded hover:bg-[#820E65] focus:outline-none float-start"
+            >
+              afichie
+            </button>
+          </div>
+        </div>
+
       </form>
       <button
-        type="submit"
+        id="download__pdf"
         class="bg-green-500 text-white py-1 px-4 rounded hover:bg-green-600 focus:outline-none float-end"
       >
         Telechargé
       </button>
+    </div>
+
+
+    <!--cv-->
+    <div id="preview-section"
+  >
+     
+      
     </div>
 
     <!--footeer-->
@@ -702,6 +733,7 @@
           </p>
         </div>
       </div>
+      <div id="cv">  </div>
     </footer>
     <script src="../script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
